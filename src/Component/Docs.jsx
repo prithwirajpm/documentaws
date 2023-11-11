@@ -33,7 +33,7 @@ function Docs() {
                     </Col>
                     <Col lg={1} md={1} xs={2} className='d-flex justify-content-center align-items-center'>
                         {
-                            showButton ? <IconButton  onClick={() => {setShowButton();setBgColor('bgdark');}} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
+                            showButton ? <IconButton  onClick={() => {setShowButton();setBgColor('bgImg');}} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
                                 <DarkModeIcon style={{ fontSize: '30px'}} />
                             </IconButton> : <IconButton onClick={() => { setShowButton(true); setBgColor('bg-body-secondary'); }} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
                                 <LightModeIcon className='text-white' style={{ fontSize: '30px' }} />
