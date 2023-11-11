@@ -5,16 +5,18 @@ import AddDoc from './AddDoc';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import ShowDocs from './ShowDocs';
+import '../Component/Docs.css';
 
 function Docs() {
     const [showButton, setShowButton] = useState(true);
     const [bgColor, setBgColor] = useState('white');
 
+
     return (
-        <div style={{ backgroundColor: `${bgColor}` }} className='vh-100'>
+        <div className={`vh-100 ${bgColor}`}>
             <Container className='p-5'>
                 <Row>
-                    <Col lg={10}>
+                    <Col lg={10} md={10} xs={8}>
                         <TextField
                             id="filled-search"
                             label="Search Docs"
@@ -26,15 +28,15 @@ function Docs() {
                             }}
                         />
                     </Col>
-                    <Col lg={1} className='d-flex justify-content-center align-items-center'>
-                        <AddDoc />
+                    <Col lg={1} md={1} xs={2} className='d-flex justify-content-center align-items-center'>
+                        <AddDoc showButton={showButton} />
                     </Col>
-                    <Col lg={1} className='d-flex justify-content-center align-items-center'>
+                    <Col lg={1} md={1} xs={2} className='d-flex justify-content-center align-items-center'>
                         {
-                            showButton ? <IconButton onClick={() => setShowButton(setBgColor('grey'))} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
-                                <DarkModeIcon style={{ fontSize: '30px' }} />
+                            showButton ? <IconButton  onClick={() => {setShowButton();setBgColor('bgdark');}} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
+                                <DarkModeIcon style={{ fontSize: '30px'}} />
                             </IconButton> : <IconButton onClick={() => { setShowButton(true); setBgColor('white'); }} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
-                                <LightModeIcon style={{ fontSize: '30px' }} />
+                                <LightModeIcon className='text-white' style={{ fontSize: '30px' }} />
                             </IconButton>
                         }
 

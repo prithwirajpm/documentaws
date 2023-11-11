@@ -6,7 +6,7 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import {addDoc,collection} from 'firebase/firestore';
 import { db } from '../config/firebase';
 
-function AddDoc() {
+function AddDoc({showButton}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -18,12 +18,14 @@ function AddDoc() {
         await addDoc(CollectionRef, {
             title: doctitile
         })
+        handleClose()
+        window.location.reload();
     };
 
     return (
         <>
             <IconButton onClick={handleShow} aria-label="add" size="large">
-                <PostAddIcon style={{ fontSize: '40px' }} />
+               {showButton?<PostAddIcon style={{ fontSize: '40px' }} /> : <PostAddIcon className='text-white' style={{ fontSize: '40px' }} />} 
             </IconButton>
 
             <Modal
@@ -49,7 +51,7 @@ function AddDoc() {
                     />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={()=>{postDocData();handleClose();}}>Add</Button>
+                    <Button variant="primary" onClick={()=>postDocData()}>Add</Button>
                 </Modal.Footer>
             </Modal>
         </>
