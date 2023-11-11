@@ -9,7 +9,7 @@ import '../Component/Docs.css';
 
 function Docs() {
     const [showButton, setShowButton] = useState(true);
-    const [bgColor, setBgColor] = useState('white');
+    const [bgColor, setBgColor] = useState('bg-body-secondary');
 
 
     return (
@@ -35,7 +35,7 @@ function Docs() {
                         {
                             showButton ? <IconButton  onClick={() => {setShowButton();setBgColor('bgdark');}} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
                                 <DarkModeIcon style={{ fontSize: '30px'}} />
-                            </IconButton> : <IconButton onClick={() => { setShowButton(true); setBgColor('white'); }} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
+                            </IconButton> : <IconButton onClick={() => { setShowButton(true); setBgColor('bg-body-secondary'); }} aria-label="add" size="large" className='d-flex justify-content-center align-items-center'>
                                 <LightModeIcon className='text-white' style={{ fontSize: '30px' }} />
                             </IconButton>
                         }

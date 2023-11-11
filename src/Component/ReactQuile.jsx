@@ -64,7 +64,7 @@ function ReactQuile() {
   return (
     <div className='vh-100'>
       <Container className='p-5'>
-        <ReactQuill ref={quillRef} value={docBody} onChange={handleDocBodyChange} />
+        <ReactQuill className='bg-body-secondary' ref={quillRef} value={docBody} onChange={handleDocBodyChange} />
       </Container>
     </div>
   );
