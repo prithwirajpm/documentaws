@@ -2,7 +2,8 @@
     background: linear-gradient(180.2deg, rgb(30, 33, 48) 6.8%, rgb(74, 98, 110) 131%);
 }
 
-.bgImg{
-    background: url('https://i.pinimg.com/originals/8f/25/c5/8f25c5995c6a44c834ad3f2f06227c01.gif');
+.bgImg {
+    background: url('https://i.gifer.com/embedded/download/gzH.gif');
+    background-size: cover;
+    background-position: center; /* Center the background image */
 }
-
